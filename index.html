@@ -228,10 +228,10 @@ button{
 </div> 
 <script>
 	document.getElementById("button").onclick = function(){
-		var emails = document.getElementById("emails").value.split("\n");
+		var emails = document.getElementById("emails").value.toLowerCase().split("\n");
 		var hashes = "";
 		for(var i = 0; i < emails.length; i++){
-			hashes += md5(emails[i]) + "\n";
+			hashes += md5(emails[i].trim()) + "\n";
 		}
 		document.getElementById("hashes").value = hashes;
 	}
